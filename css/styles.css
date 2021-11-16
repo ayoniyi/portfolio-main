@@ -1,0 +1,236 @@
+@font-face {
+  src: url(/fonts/MonumentExtended-Black.ttf);
+  font-family: Mon;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+html,
+body nav .menu .marquee {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Mon', sans-serif;
+  /* original */
+  /* background: url(https://media.giphy.com/media/3oEduMhFrYvKk4giac/giphy.gif)
+    no-repeat 50% 50%; */
+
+  /* background: url(https://media.giphy.com/media/l4Jzi0iyKHLe1qT9S/giphy.gif)
+    no-repeat 50% 50%; */
+
+  /* computer */
+  background: url(https://media.giphy.com/media/xT9IgFLfWUZigjoem4/giphy.gif)
+    no-repeat;
+
+  /* trippy1 */
+  /* background: url(https://media.giphy.com/media/DZQQhMFohFVS0/giphy.gif)
+    no-repeat 50% 50%; */
+
+  background-position: center right;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.555);
+  position: absolute;
+  height: 130vh;
+
+  width: 100%;
+}
+.menu__item {
+  position: relative;
+  padding: 0 6vw;
+}
+
+.menu__item-link {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  -webkit-text-stroke: 1.5px #ffff;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: opacity 0.4s;
+}
+
+.menu__item-link::before {
+  all: initial;
+  font-family: sofia-pro, sans-serif;
+  counter-increment: menu;
+  position: absolute;
+  bottom: 60%;
+  left: 0;
+  pointer-events: none;
+}
+
+.menu__item-link:hover {
+  transition-duration: 0.1s;
+  opacity: 0;
+}
+
+.menu__item-img {
+  pointer-events: none;
+  position: absolute;
+  height: 50vh;
+  max-height: 400px;
+  opacity: 0;
+  left: 100%;
+  top: 50%;
+  transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0);
+}
+.menu__item-vid {
+  pointer-events: none;
+  position: absolute;
+  /* height: 55vh; */
+  width: 500px;
+  height: 400px;
+  /* max-height: 500px; */
+  opacity: 0;
+  left: 100%;
+  top: 0%;
+  transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0);
+}
+
+.menu__item-link:hover + .menu__item-img,
+.menu__item-link:hover + .menu__item-vid {
+  opacity: 1;
+  transform: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg);
+  transition: all 0.4s;
+}
+
+.menu {
+  padding: 3em 0 0 0;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  font-size: 3.7vw;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #fff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.menu__item-link:hover ~ .marquee .marquee__inner {
+  animation-play-state: running;
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+.menu__item-link,
+.marquee span {
+  white-space: nowrap;
+  font-size: 7vw;
+  padding: 0 1vw;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.marquee span {
+  font-style: italic;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+.logo {
+  position: fixed;
+  top: 0;
+  left: 20px;
+}
+.logo img {
+  width: 30%;
+}
+.sm-box {
+  padding-right: 10px;
+  position: fixed;
+  width: 100%;
+  /* background: sienna; */
+  color: #fff;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 5%;
+  /* -webkit-text-stroke: 1.5px #ffff; */
+  /*-webkit-text-fill-color: transparent; */
+  /* color: transparent; */
+}
+@media (max-width: 1080px) {
+  .menu {
+    padding: 3em 0 0 0;
+  }
+  .menu__item {
+    position: relative;
+    padding: 0.3em 6vw;
+  }
+}
+@media (max-width: 600px) {
+  html body nav {
+    overflow-x: auto;
+  }
+  body {
+    background: url(https://media.giphy.com/media/DZQQhMFohFVS0/giphy.gif)
+      no-repeat;
+    /* height: 100vh; */
+
+    background-size: cover;
+    /* overflow-y: hidden; */
+    /* max-height: 50vh; */
+    background-position: center center;
+  }
+  .menu {
+    padding: 10em 0 0 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    max-height: 100vh;
+    position: relative;
+    /* overflow-y: hidden; */
+  }
+  .menu__item {
+    position: relative;
+    padding: 1em 6vw;
+    /* overflow-y: hidden; */
+  }
+  .sm-box {
+    font-size: 0.7em;
+    bottom: 5%;
+  }
+  .overlay {
+    height: 90vh;
+  }
+}
+@media (max-width: 420px) {
+  body {
+    background: black;
+  }
+}

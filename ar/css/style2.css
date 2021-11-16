@@ -1,0 +1,237 @@
+@font-face {
+  src: url(/fonts/MonumentExtended-Black.ttf);
+  font-family: Mon;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: #000;
+  /* background: linear-gradient(
+    329.32deg,
+    #55565a 22.53%,
+    rgba(85, 86, 90, 0.284337) 53.12%,
+    rgba(85, 86, 90, 0) 68.89%
+  ); */
+  font-family: 'Mon', sans-serif;
+  min-height: 100vh;
+}
+
+.logo {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 20px;
+}
+.logo img {
+  width: 30%;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ar-top {
+  margin: 8em 0;
+  text-align: center;
+  color: #fff;
+}
+.ar-title {
+  font-size: 4.7em;
+}
+.ar-subtitle {
+  width: 80%;
+  margin: 0.7em auto;
+}
+.ar-items {
+  width: 100%;
+  /* background: lavender; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.container,
+.container3 {
+  /* width: 40%; */
+  width: 24rem;
+  height: 100%;
+  /* background: khaki; */
+  padding: 0;
+}
+.container2,
+.container4 {
+  /* width: 40%; */
+  width: 24rem;
+  height: 100%;
+  margin-top: 18em;
+  /* background: rgb(250, 137, 45); */
+}
+.card {
+  overflow: visible !important;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /* background: linear-gradient(
+    329.32deg,
+    #55565a 22.53%,
+    rgba(85, 86, 90, 0.284337) 53.12%,
+    rgba(85, 86, 90, 0) 68.89%
+  ); */
+  background: black;
+  /* backdrop-filter: blur(72px);
+  -webkit-backdrop-filter: blur(72px); */
+  border: 2px solid #fff;
+  /* min-height: 80vh; */
+  width: 24rem;
+  border-radius: 30px;
+  /* border-radius: 50%; */
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 20px rgba(233, 231, 231, 0.2),
+    0px 0px 50px rgba(165, 163, 163, 0.2);
+}
+
+.phone,
+.phone2,
+.phone3,
+.phone4 {
+  perspective: 1500px;
+  -webkit-perspective: 1500px;
+  min-height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .phone img {
+  width: 20rem;
+  z-index: 2;
+  transition: all 0.55s ease-out;
+} */
+
+.vid-frame {
+  width: 100%;
+  z-index: 2;
+  height: 330px;
+  transform: rotateX(25deg);
+  transition: all 0.55s ease-out;
+  /* height: 100%; */
+  /* background: lavender; */
+}
+.circle {
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(
+    to right,
+    rgba(245, 70, 66, 0.75),
+    rgba(8, 83, 156, 0.75)
+  );
+  position: absolute;
+  border-radius: 12%;
+  transform: rotate(50deg);
+  z-index: 1;
+}
+.info {
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  margin-top: 2em;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.info h1 {
+  font-size: 2rem;
+  transition: all 0.55s ease-out;
+  color: #fff;
+}
+.info h3 {
+  font-size: 1rem;
+  padding: 2rem 0rem;
+  color: #fff;
+  font-weight: lighter;
+  transition: all 0.55s ease-out;
+}
+.cta,
+.cta2,
+.cta3,
+.cta4 {
+  transition: all 0.55s ease-out;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.try-it {
+  /* width: 30px; */
+  width: 70%;
+  padding: 1rem 0rem;
+  background: #f54642;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bolder;
+  font-size: 1em;
+  margin: 0 auto;
+}
+.ar-bottom {
+  margin: 10rem 0;
+}
+.ar-bottom a {
+  color: #fff;
+  text-decoration: none;
+  /* font-family: 'GrandSlang Roman'; */
+  font-size: 3.5em;
+  margin-top: 7em;
+  transition: 2s ease-in;
+}
+.ar-bottom a:hover {
+  -webkit-text-stroke: 1.5px #ffff;
+  -webkit-text-fill-color: transparent;
+  /* font-style: italic; */
+  transition: 2s ease-in;
+}
+
+@media (max-width: 900px) {
+  .ar-top {
+    margin: 10em 0 6em 0;
+  }
+  .ar-title {
+    font-size: 2em;
+  }
+  .ar-items {
+    flex-direction: column;
+  }
+  .container,
+  .container2,
+  .container3,
+  .container4 {
+    margin: 2em 0;
+    width: 100%;
+    /* background: lavenderblush; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 89%;
+  }
+  .info h1 {
+    font-size: 1.5rem;
+  }
+  .info h3 {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .ar-bottom a {
+    font-size: 35px;
+  }
+}

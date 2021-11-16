@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ayoniyi's || AR effects</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="images/a-logo.jpeg" />
+    <link rel="icon" type="image/png" href="images/a-logo.jpeg" />
+    <link rel="stylesheet" href="./css/style2.css" />
+    <!--aos-->
+    <link rel="stylesheet" type="text/css" href="aos-m/dist/aos.css" />
+
+    <!-- greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div class="logo">
+      <a href="/index/"><img src="images/a-logo.png" alt="logo" /></a>
+    </div>
+
+    <div class="content">
+      <div class="ar-top">
+        <h1 class="ar-title">AR EFFECTS</h1>
+        <p class="ar-subtitle">
+          Some camera effects & filters across IG, Snapchat and Facebook.
+        </p>
+      </div>
+
+      <div class="ar-items">
+        <div class="container" data-aos="fade-up" data-aos-duration="5000">
+          <div class="card">
+            <div class="phone">
+              <div class="circle"></div>
+              <!-- <img src="images/adidas.png" alt="adidas" /> -->
+              <iframe
+                class="vid-frame"
+                src="https://streamable.com/e/jp3n3b?autoplay=1&nocontrols=1&muted=1"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="info">
+              <h1 class="title">"Outside"</h1>
+              <h3>
+                Platform : IG X Facebook X Snapchat
+              </h3>
+                <a  href="https://www.instagram.com/ar/578655629804864/" class="cta">
+                  <button class="try-it"> Try it</button>
+                </a>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container2"
+          data-aos="fade-up-right"
+          data-aos-duration="9000"
+        >
+          <div class="card">
+            <div class="phone2">
+              <div class="circle"></div>
+              <!-- <img src="images/adidas.png" alt="adidas" /> -->
+              <iframe
+                class="vid-frame"
+                src="https://streamable.com/e/58os39?autoplay=1&nocontrols=1&muted=1"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="info">
+              <h1 class="title">"PinkBunny"</h1>
+              <h3>
+                Platform : IG
+              </h3>
+              <a  href="https://www.instagram.com/ar/372698507160750/" class="cta2">
+                <button class="try-it">Try it</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ar-items">
+        <div class="container3" data-aos="fade-up" data-aos-duration="5000">
+          <div class="card">
+            <div class="phone3">
+              <div class="circle"></div>
+              <!-- <img src="images/adidas.png" alt="adidas" /> -->
+              <iframe
+                class="vid-frame"
+                src="https://streamable.com/e/al9x97?autoplay=1&nocontrols=1&muted=1"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="info">
+              <h1 class="title">"WeOutside"</h1>
+              <h3>
+                Platform : IG
+              </h3>
+              <a  href="https://www.instagram.com/ar/233934958634111/" class="cta3">
+                <button class="try-it">Try it</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container4"
+          data-aos="fade-up-right"
+          data-aos-duration="9000"
+        >
+          <div class="card">
+            <div class="phone4">
+              <div class="circle"></div>
+              <!-- <img src="images/adidas.png" alt="adidas" /> -->
+              <iframe
+                class="vid-frame"
+                src="https://streamable.com/e/4o814o?autoplay=1&nocontrols=1&muted=1"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="info">
+              <h1 class="title">"ForKaneki"</h1>
+              <h3>
+                Platform : IG
+              </h3>
+              <a  href="https://www.instagram.com/ar/432795864504282/" class="cta4">
+                <button class="try-it">Try it</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ar-bottom">
+        <a href="/index/"><h1>home</h1></a>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="./js/cardhover.js"></script>
+    <!--aos script-->
+    <script type="text/javascript" src="aos-m/dist/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+    <script>
+      // project title animation
+      var textWrapper = document.querySelector('.ar-title')
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>",
+      )
+
+      anime.timeline().add({
+        targets: '.ar-title .letter',
+        translateY: [60, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 3700,
+        delay: (el, i) => 600 + 30 * i,
+      })
+
+      // project subtitle animation
+      TweenMax.from('.ar-subtitle', 2, {
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      })
+    </script>
+  </body>
+</html>
